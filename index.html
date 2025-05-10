@@ -205,6 +205,7 @@
         .dark .card-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
         }
+		
     </style>
 </head>
 <body class="font-sans text-neutral-800 bg-white">
@@ -1214,8 +1215,10 @@
                     &copy; 2023 Aleixo Energia & Elétrica. Todos os direitos reservados.
                 </p>
                 <div class="flex space-x-6 text-sm text-neutral-500">
-                    <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
-                    <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                    
+<a href="#" onclick="openModal('politicaModal')" class="hover:text-white transition-colors">Política de Privacidade</a>
+<a href="#" onclick="openModal('termosModal')" class="hover:text-white transition-colors">Termos de Uso</a>
+				  
                 </div>
             </div>
         </div>
@@ -1405,5 +1408,40 @@
             });
         }
     </script>
+	
+<!-- Modal: Política -->
+<div id="politicaModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+  <div class="bg-neutral-900 text-neutral-100 p-6 max-w-lg rounded-lg overflow-y-auto max-h-[80vh]">
+    <h2 class="text-lg font-bold mb-3">Política de Privacidade</h2>
+    <p class="mb-2">Coletamos através do formulário na pagina, apenas os dados essenciais para atendimento e execução dos serviços. Nenhuma informação será vendida ou compartilhada com terceiros.</p>
+    <p class="mb-2">Você pode solicitar a exclusão dos seus dados a qualquer momento.</p>
+    <p class="mb-4">A Aleixo Energia & Elétrica se reserva o direito de atualizar esta política conforme necessário, sempre visando a transparência e segurança.</p>
+    <button onclick="document.getElementById('politicaModal').style.display='none'" class="text-blue-400 hover:underline">Fechar</button>
+  </div>
+</div>
+
+<!-- Modal: Termos -->
+<div id="termosModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+  <div class="bg-neutral-900 text-neutral-100 p-6 max-w-lg rounded-lg overflow-y-auto max-h-[80vh]">
+    <h2 class="text-lg font-bold mb-3">Termos de Uso</h2>
+    <p class="mb-2">Ao utilizar este site ou contratar nossos serviços, você concorda com os termos aqui apresentados.</p>
+    <p class="mb-2">A execução dos serviços depende de análise técnica e condições adequadas no local.</p>
+    <p class="mb-2">A Aleixo Energia & Elétrica se dá o direito de cancelar ou recusar atendimentos que envolvam riscos à segurança ou infraestrutura incompatível.</p>
+    <p class="mb-4">Todo o conteúdo deste site tem objtivo para finalidade informativa e de atendimento, além de estar protegido por direitos reservados.</p>
+    <button onclick="document.getElementById('termosModal').style.display='none'" class="text-blue-400 hover:underline">Fechar</button>
+  </div>
+</div>
+
+<!-- Script para modais -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
+	
 </body>
 </html>
